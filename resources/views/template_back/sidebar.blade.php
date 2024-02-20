@@ -20,7 +20,7 @@
                     <div class="app-sidebar__user">
                         <div class="dropdown user-pro-body text-center">
                             <div class="user-pic">
-                                <img src="{{asset('')}}back/img/faces/6.jpg" alt="user-img" class="rounded-circle mCS_img_loaded">
+                                <img src="{{asset('')}}back/user/al.jpg" alt="user-img" class="rounded-circle mCS_img_loaded">
                             </div>
                             <div class="user-info">
                                 <h6 class=" mb-0 text-dark">@auth {{ auth()->user()->name }} @endauth</h6>

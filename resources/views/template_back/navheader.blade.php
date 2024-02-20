@@ -45,13 +45,14 @@
                             </div>
                             
                             <div class="dropdown main-profile-menu nav nav-item nav-link">
-                                <a class="profile-user d-flex" href=""><img src="{{asset('')}}back/img/faces/6.jpg" alt="user-img" class="rounded-circle mCS_img_loaded"><span></span></a>
+                                <a class="profile-user d-flex" href=""><img src="{{asset('')}}back/user/al.jpg" alt="user-img" class="rounded-circle mCS_img_loaded"><span></span></a>
 
                                 <div class="dropdown-menu">
                                     <div class="main-header-profile header-img">
-                                        <div class="main-img-user"><img alt="" src="{{asset('')}}back/img/faces/6.jpg"></div>
+                                        {{-- <td><img width="100px" height="60px" class="rounded-5" src="@if($dt->img) {{asset('')}}images/user/{{$dt->img}} @else {{asset('')}}images/no-user.png @endif" style="object-fit:cover"> </td> --}}
+                                        <div class="main-img-user"><img src="{{asset('')}}back/user/al.jpg" alt="user-img" class="rounded-circle mCS_img_loaded"></div>
                                         <h6>@auth {{ auth()->user()->name }} @endauth</h6>
-                                        <span>@auth {{ auth()->user()->namerole }} @endauth</span>
+                                        <span>@auth {{ auth()->user()->namezrole }} @endauth</span>
 
                                     </div>
                                     <!-- <a class="dropdown-item" href=""><i class="far fa-user"></i> My Profile</a>

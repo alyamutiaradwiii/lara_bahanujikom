@@ -42,12 +42,12 @@ $Tanggal = new \App\Helpers\Tanggal; //panggil no static function
                                     <div class="col-md-12">
                                         <div class="row row-xs align-items-top mg-b-20">
                                             <div class="col-md-3">
-                                                <label class="form-label mg-b-0">Foto </label>
+                                                <label class="form-label mg-b-0">Gambar </label>
                                             </div>
                                             <div class="col-md-9 mg-t-5 mg-md-t-0">
                                                 <input class="form-control" name="img" type="file">
                                                 <small><p class="text-muted">* File Extention .png/.jpg/.jpeg  | size image Max 2MB : (1125px x 792px) &nbsp;</p></small>
-                                                <img class="img-responsive" width="50%" height="auto" src="@if($data->img) {{asset('')}}images/user/{{$data->img}} @else {{asset('')}}images/no-image.png @endif">
+                                                <img class="img-responsive" width="25%" height="auto" src="@if($data->img) {{asset('')}}images/user/{{$data->img}} @else {{asset('')}}images/no-image.png @endif">
                                             </div>
                                         </div>    
                                         <div class="row row-xs align-items-center mg-b-20">

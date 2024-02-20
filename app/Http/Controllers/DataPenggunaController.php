@@ -64,9 +64,9 @@ class DataPenggunaController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
             // 'isrole' => 'required|numeric',
-            'email' => 'required|email|unique:users,email',
+            'email' => '|email|unique:users,email',
             'password' => 'required|max:80|min:8',
-            'img' => 'required|image|mimes:jpg,png,jpeg|max:2000',
+            'img' => 'nullable|image|mimes:jpg,png,jpeg|max:2000',
         ]);
         if ($validator->fails()) {
             $errormessage='';
@@ -110,6 +110,7 @@ class DataPenggunaController extends Controller
 		}
     }
     
+    //data edit
     public function edit($id)
     {
         // GET THE DATA BASED ON ID
@@ -124,7 +125,7 @@ class DataPenggunaController extends Controller
         return view('data_pengguna.formEdit', compact('data','id'));
     }
 
-
+    //data update
     public function update($id,Request $request)
     {
         // CHECK OBJECT ID
@@ -162,9 +163,9 @@ class DataPenggunaController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|max:255',
             // 'isrole' => 'required|numeric',
-            'email' => 'required|email|unique:users,email'.$id_b,
+            'email' => 'nullable|email|unique:users,email'.$id_b,
             'password' => 'nullable|max:80|min:8',
-            'img' => 'required|image|mimes:jpg,png,jpeg|max:200',
+            'img' => 'nullable|image|mimes:jpg,png,jpeg|max:200',
         ]);
         if ($validator->fails()) {
             $errormessage='';

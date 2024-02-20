@@ -42,8 +42,9 @@
                                             <label class="form-label mg-b-0">Foto </label>
                                         </div>
                                         <div class="col-md-9 mg-t-5 mg-md-t-0">
-                                            <input class="form-control" name="img" type="file">
-                                            <small><p class="text-muted">* File Extention .png/.jpg/.jpeg  | size image Max 2MB : (1125px x 792px) &nbsp;</p></small>
+                                            <input class="form-control" name="img" id="image" type="file" onchange="previewImage()">
+                                            <small><p class="text-muted">* File Extention .png/.jpg/.jpeg  | size image Max 2MB : (500px x 500px) &nbsp;</p></small>
+                                            <img class="img-preview img-fluid" width="25%">
                                         </div>
                                     </div>    
                                     <div class="row row-xs align-items-center mg-b-20">
@@ -139,6 +140,20 @@
             s[1] += new Array(prec - s[1].length + 1).join('0')
         }
         return s.join(dec)
+    }
+
+    function previewImage() {
+    const image = document.querySelector('#image');
+    const imgPreview = document.querySelector('.img-preview');
+
+    imgPreview.style.display = 'block';
+
+    const oFReader = new FileReader();
+    oFReader.readAsDataURL(image.files[0]);
+
+    oFReader.onload = function(oFREvent) {
+        imgPreview.src = oFREvent.target.result;
+    }
     }
 </script>
 
